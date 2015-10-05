@@ -25,14 +25,14 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
                    Text="Internal Test Version" FontSize="24"/>
-        <TextBlock Grid.Row="2"
+        <Button x:Name="OrderViewBtn" Grid.Row="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="**Go to Orders View**"  />
+                   Content="Go to Orders View" Click="OrderViewBtn_Click"  />
 
-        <TextBlock Grid.Row="2" Grid.Column="1"
+        <Button x:Name="SubmitOrderBtn" Grid.Row="2" Grid.Column="1"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="**Submit Order**"  />
+                   Content="Submit Order" Click="SubmitOrderBtn_Click"  />
     </Grid>
 </Page>

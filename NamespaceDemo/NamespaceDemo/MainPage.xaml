@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="NamespaceDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NamespaceDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:models="using:AppDataModel"
+    xmlns:toolkit="using:Coding4Fun.Toolkit.Controls">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button>
+            <Button.Content>
+                <models:TextPayload/>
+            </Button.Content>
+        </Button>
+        <StackPanel Orientation="Vertical" >
+            <toolkit:ChatBubble Foreground="White"
+                                Background="LightCoral"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                Content="Start of Conversation"
+                                ChatBubbleDirection="UpperLeft">
+                
+            </toolkit:ChatBubble>
+            
+            <toolkit:ChatBubble Foreground="White"
+                                Background="DarkCyan"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                Content="Response"
+                                ChatBubbleDirection="LowerRight"/>
+            
+            <toolkit:ChatBubble Foreground="White"
+                                Background="LightCoral"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                Content="End of Conversation"
+                                ChatBubbleDirection="UpperLeft"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -5,7 +5,8 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    DataContext="{StaticResource DataManager}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -24,19 +25,21 @@
                    Text="Special Requests:"/>
         <TextBlock Grid.Row="1" Grid.Column="2"
                    Text="Order Items:"/>
-        <Button Grid.Row="4"
+        <Button x:Name="AddToOrderBtn" Grid.Row="4"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Content="Add to Order" />
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                   Content="Add to Order"
+                Click="AddToOrderBtn_Click"/>
+        <Button x:Name="SubmitOrderBtn" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Content="Submit Order" />
+                   Content="Submit Order"
+                Click="SubmitOrderBtn_Click"/>
         
-        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"
-                  Margin="10"/>
-        <ListView Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"
-                  Margin="10"/>
+        <ListView x:Name="MenuList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"
+                  Margin="10" ItemsSource="{Binding MenuItems}" />
+        <ListView x:Name="SelectedList" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"
+                  Margin="10" ItemsSource="{Binding CurrentlySelectedMenuItems}" />
 
         <AppBar Grid.ColumnSpan="3">
             <AppBarButton Label="Home" Icon="Home" x:Name="HomeBtn" Click="HomeBtn_Click"  />
